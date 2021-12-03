@@ -745,13 +745,18 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   color: #000000;
-
-  /* transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  cursor: pointer;
 }
 
 .icon-close-btn {
   position: absolute;
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:hover .icon-close-btn,
+.close-btn:focus .icon-close-btn {
+  fill: var(--accent-color);
 }
 
 .backdrop:hover {
@@ -779,20 +784,46 @@ input::placeholder {
   letter-spacing: 0.01em;
   color: var(--second-text-color);
 }
+
 .label-input {
   display: flex;
   flex-direction: column;
-}
-.label-input input {
   margin-bottom: 10px;
+}
+
+.label-input .input {
   padding-left: 42px;
+  width: 100%;
   height: 40px;
 
   border-radius: 4px;
   border-width: 1px;
   background-color: transparent;
   border-color: rgba(33, 33, 33, 0.2);
-  /* outline: none; */
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icons-wrap {
+  position: relative;
+}
+
+.input-icons {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input:focus {
+  border-color: var(--accent-color);
+}
+
+.input:focus + .input-icons {
+  fill: var(--accent-color);
 }
 
 .label-textarea {
@@ -810,6 +841,11 @@ textarea {
   border-color: rgba(33, 33, 33, 0.2);
   border-width: 1px;
   background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea:focus {
+  border-color: var(--accent-color);
 }
 
 textarea::placeholder {
@@ -819,8 +855,22 @@ textarea::placeholder {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
+/* ------------confirmation----------------- */
+.checkbox {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 
 .confirmation {
+  position: relative;
   display: flex;
   align-items: center;
   margin-bottom: 30px;
@@ -831,6 +881,74 @@ textarea::placeholder {
   letter-spacing: 0.03em;
   color: var(--second-text-color);
 }
+
+.label-icon span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+
+  border-radius: 2px;
+  border: 2px solid var(--primery-text-color);
+}
+
+.check-icon {
+  fill: var(--main-color);
+}
+
+.checkbox:checked + .label-icon span {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+/* 
+.checkbox-border {
+  display: inline-block;
+  position: relative;
+
+  margin-right: 8px;
+  width: 16px;
+  height: 15px;
+
+  border-radius: 2px;
+  border: 2px solid var(--primery-text-color);
+}
+
+/* .check-icon {
+  /* position: absolute;
+  width: 16px;
+  height: 15px;
+  fill: var(--main-color);
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}  */
+
+/* .checkbox:checked + .checkbox-border {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  fill: var(--main-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border-radius: 2px;
+  background-image: url(../images/icon\ check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+} */
+
+.conditions {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
 .modal-sbm-btn {
   display: flex;
   align-items: center;

@@ -440,17 +440,32 @@
         <form action="#" class="modal-form">
           <div class="label-input">
             <label for="name" class="label-name">Имя</label>
-            <input type="text" name="name" id="name" />
+            <div class="icons-wrap">
+              <input type="text" name="name" id="name" class="input" />
+              <svg class="input-icons" width="12" height="12">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
           </div>
 
           <div class="label-input">
             <label for="tel" class="label-name">Телефон</label>
-            <input type="tel" name="tel" id="tel" />
+            <div class="icons-wrap">
+              <input type="tel" name="tel" id="tel" class="input" />
+              <svg class="input-icons" width="13" height="13">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
           </div>
 
           <div class="label-input">
             <label for="mail" class="label-name">Почта</label>
-            <input type="email" name="email" id="mail" />
+            <div class="icons-wrap">
+              <input type="email" name="email" id="mail" class="input" />
+              <svg class="input-icons" width="15" height="12">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
           </div>
 
           <div class="label-textarea">
@@ -459,8 +474,14 @@
           </div>
 
           <div class="confirmation">
-            <input type="checkbox" name="confirmation" id="confirmation" />
-            <label for="confirmation">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+            <input type="checkbox" name="confirmation" class="checkbox" id="check" />
+            <label for="check" class="label-icon">
+              <span>
+                <svg class="check-icon" width="16" height="15">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg> </span
+              >Соглашаюсь с рассылкой и принимаю <a href="" class="conditions">Условия договора</a>
+            </label>
           </div>
 
           <div class="modal-sbm-btn">
