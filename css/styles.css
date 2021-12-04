@@ -911,10 +911,10 @@ textarea::placeholder {
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* .checkbox:focus + .label-icon span {
+.checkbox:focus + .label-icon span {
   background-color: var(--accent-color);
   border: 2px solid var(--accent-color);
-} */
+}
 
 .checkbox:checked + .check-icon {
   background-origin: border-box;
