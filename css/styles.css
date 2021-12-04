@@ -254,6 +254,12 @@ img {
 .footer-conteiner {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
+
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
   outline: 2px solid tomato;
 }
 
@@ -800,7 +806,12 @@ input::placeholder {
   border-width: 1px;
   background-color: transparent;
   border-color: rgba(33, 33, 33, 0.2);
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.input:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .icons-wrap {
@@ -817,9 +828,6 @@ input::placeholder {
   left: 12px;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.input:focus {
-  border-color: var(--accent-color);
 }
 
 .input:focus + .input-icons {
@@ -874,12 +882,18 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  margin-left: 10px;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--second-text-color);
+}
+.label-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .label-icon span {
@@ -893,6 +907,13 @@ textarea::placeholder {
 
   border-radius: 2px;
   border: 2px solid var(--primery-text-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox:focus + .label-icon span {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .check-icon {
@@ -904,42 +925,6 @@ textarea::placeholder {
   border: none;
 }
 
-/* 
-.checkbox-border {
-  display: inline-block;
-  position: relative;
-
-  margin-right: 8px;
-  width: 16px;
-  height: 15px;
-
-  border-radius: 2px;
-  border: 2px solid var(--primery-text-color);
-}
-
-/* .check-icon {
-  /* position: absolute;
-  width: 16px;
-  height: 15px;
-  fill: var(--main-color);
-  background-color: var(--accent-color);
-  border-radius: 2px;
-}  */
-
-/* .checkbox:checked + .checkbox-border {
-  position: absolute;
-  width: 16px;
-  height: 15px;
-  fill: var(--main-color);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  border-radius: 2px;
-  background-image: url(../images/icon\ check.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-origin: border-box;
-} */
-
 .conditions {
   font-weight: 400;
   font-size: 14px;
@@ -947,6 +932,7 @@ textarea::placeholder {
   letter-spacing: 0.03em;
   color: var(--accent-color);
   text-decoration: underline;
+  margin-left: 2px;
 }
 
 .modal-sbm-btn {
