@@ -906,8 +906,7 @@ textarea::placeholder {
 }
 
 .checkbox:focus + .label-icon span {
-  background-color: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--primery-text-color);
 }
 
 .checkbox:checked + .check-icon {
